@@ -1,10 +1,19 @@
 from pathlib import Path
 from typing import TextIO
+import argparse
 
 
 ROOT = Path().absolute()
 PATH = ROOT / '2023/day7'
-FILENAME = 'input.txt'
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-t','--text',help='pick a text to run', type=int, default=0)
+args = parser.parse_args()
+
+if args.text:
+    FILENAME = 'input.txt'
+else:
+    FILENAME = 'sample_input.txt'
 
 letter_map = dict(T='A',J='B',Q='C',K='D',A="E")
 def classify(hand):
