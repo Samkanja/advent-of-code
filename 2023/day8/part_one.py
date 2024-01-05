@@ -23,11 +23,13 @@ def read_input(f:TextIO):
     for node in nodes:
         pos, targets = node.split(' = ')
         network[pos] = targets[1:-1].split(', ')
+    # print(network)
     current = "AAA"
     step_count = 0
     while current != "ZZZ":
     
         step_count += 1
+        
 
         current = network[current][steps[0] =='R']
         steps = steps[1:] + steps[0]
